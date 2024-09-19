@@ -15,3 +15,12 @@ flyway:
   datasources:
     default:
       enabled: true
+
+
+pulsar:
+  service-url: pulsar://${PULSAR_HOST:127.0.0.1}:${PULSAR_TCP_6650:6650}
+  producers:
+    dummy:
+      schema: just-making-sure
+      tenant: presence-of-another-producer-config
+      namespace: will-not-affect-grant-message-related-beans

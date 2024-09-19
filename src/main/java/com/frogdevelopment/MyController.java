@@ -11,7 +11,6 @@ import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Status;
 import io.micronaut.scheduling.annotation.ExecuteOn;
-import io.micronaut.serde.annotation.Serdeable;
 
 @Controller(MyController.BASE_ENDPOINT)
 @ExecuteOn(BLOCKING)
@@ -25,7 +24,4 @@ public class MyController {
         return ok(Page.empty());
     }
 
-    @Serdeable
-    public record MyItem(String field1, Integer field2) {
-    }
 }

@@ -12,19 +12,28 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor("io.micronaut:micronaut-http-validation")
-    annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
-    implementation("io.micrometer:context-propagation")
-    implementation("io.micronaut.reactor:micronaut-reactor")
-    implementation("io.micronaut.serde:micronaut-serde-jackson")
-    implementation("io.micronaut.data:micronaut-data-runtime")
-    compileOnly("io.micronaut:micronaut-http-client")
-    runtimeOnly("ch.qos.logback:logback-classic")
-    runtimeOnly("org.yaml:snakeyaml")
-    testImplementation("io.micronaut:micronaut-http-client")
-    testImplementation("org.junit.platform:junit-platform-suite-engine")
-    testImplementation("org.mockito:mockito-core")
-    testImplementation("org.assertj:assertj-core:3.26.3")
+    annotationProcessor(mn.micronaut.http.validation)
+    annotationProcessor(mn.micronaut.serde.processor)
+    annotationProcessor(mn.micronaut.data.processor)
+
+    implementation(mn.micronaut.context.propagation)
+    implementation(mn.micronaut.reactor)
+    implementation(mn.micronaut.serde.jackson)
+    implementation(mn.micronaut.data.jdbc)
+    implementation(mn.micronaut.jdbc.hikari)
+    implementation(mn.micronaut.flyway)
+
+    compileOnly(mn.micronaut.http.client)
+    compileOnly(mn.jakarta.persistence.api)
+
+    runtimeOnly(mn.logback.classic)
+    runtimeOnly(mn.snakeyaml)
+    runtimeOnly(mn.mysql.connector.j)
+    runtimeOnly(mn.h2)
+
+    testImplementation(mn.micronaut.http.client)
+    testImplementation(mn.mockito.core)
+    testImplementation(mn.assertj.core)
 }
 
 

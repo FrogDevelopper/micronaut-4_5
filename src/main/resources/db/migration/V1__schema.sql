@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS entities;
+
+CREATE TABLE entities
+(
+    id      BIGINT       NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    field_1 VARCHAR(255) NOT NULL UNIQUE,
+    field_2 NUMERIC      NOT NULL
+);
